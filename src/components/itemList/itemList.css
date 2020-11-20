@@ -1,0 +1,14 @@
+.item-list .list-group-item {
+    cursor: pointer;
+}
+.bottom-panel {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+.bottom-panel .new-post-label {
+    width: auto;
+    flex-grow: 1;
+    margin-right: 3px;
+}
+  
