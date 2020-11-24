@@ -1,10 +1,10 @@
 import CharacterPage from './characterPage';
 import HousesPage from './housesPage';
 import BooksPage from './booksPage';
-import ItemDetails from './itemDetails';
+import BooksItems from './booksItems';
 export  { 
     CharacterPage,
     HousesPage,
-    ItemDetails,
-    BooksPage
+    BooksPage,
+    BooksItems
 };

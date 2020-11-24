@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import ErrorMessage from '../errorMessage/';
-import Spinner from '../spinner/';
+import ErrorMessage from '../errorMessage';
+import Spinner from '../spinner';
 import { Alert } from 'reactstrap';
 import './itemDetails.css';
 
@@ -28,7 +28,8 @@ const ItemDetails = (props) => {
             });
 
         
-    }, [props, props.selectedItemId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props.selectedItemId]);
     
     const InfoField = props.showInfo ? props.showInfo.map(item => {
         return (

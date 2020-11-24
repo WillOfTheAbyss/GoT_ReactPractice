@@ -12,3 +12,8 @@
 .toggle-btn:focus {
     outline: none;
 }
+body {
+    background: url('got.jpeg') center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ErrorMessage from '../errorMessage/';
 import Spinner from '../spinner/';
-import { Col, Row } from 'reactstrap';
-import { ItemDetails } from '../pages';
 import './itemList.css';
 
 const ItemList = (props) => {
@@ -10,12 +8,12 @@ const ItemList = (props) => {
     const [itemList, updateItemList] = useState([]);
     const [error, updateError] = useState(false);
     const [loading, updateLoading] = useState(false);
-    const [selectedItemId, updateSelectedItemId] = useState(null);
+    // const [selectedItemId, updateSelectedItemId] = useState(null);
 
 
-    const getSelectedItem = (id) => {
-        updateSelectedItemId(id);
-    }
+    // const getSelectedItem = (id) => {
+    //     updateSelectedItemId(id);
+    // }
 
     const {getFullData, inputValue = 1} = props;
     
@@ -33,7 +31,7 @@ const ItemList = (props) => {
                     updateError(true);
                 });
         }
-    }, [getFullData, inputValue, props]);
+    }, [getFullData, inputValue]);
 
     const ItemDisplay = () => {
     
@@ -51,7 +49,7 @@ const ItemList = (props) => {
                 <li 
                 key = {url} 
                 className="list-group-item"
-                onClick = {() => getSelectedItem(+url)}>
+                onClick = {() => props.getSelectedItem(+url)}>
                     {name}
                 </li>
             );
@@ -63,21 +61,11 @@ const ItemList = (props) => {
     const View = (!error && !loading) ? <ItemDisplay /> : null;
 
     return (
-        <Row>
-            <Col md='6'>
-                <ul className="item-list list-group">
-                        {Spin}
-                        {ErrorMess}
-                        {View}
-                </ul>
-            </Col>
-            <Col md='6'>
-                <ItemDetails 
-                getData = {props.getPersonalData}
-                selectedItemId = {selectedItemId}
-                showInfo = {props.showInfo}/>
-            </Col>
-        </Row>
+        <ul className="item-list list-group">
+            {Spin}
+            {ErrorMess}
+            {View}
+        </ul>
     );
     
 }

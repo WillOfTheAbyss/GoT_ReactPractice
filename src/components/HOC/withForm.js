@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Col, Row } from 'reactstrap';
 
-const withForm = (ListFunc) => {
+const withForm = (ListComponent) => {
 
 
     class ItemListWithForm extends Component {
@@ -27,7 +28,7 @@ const withForm = (ListFunc) => {
                                 onInput = {(e) => this.changeInputValue(e.target.value)}
                             />
                         </form>
-                        <ListFunc {...this.props} inputValue = {this.state.inputValue}/> 
+                        <ListComponent {...this.props} inputValue = {this.state.inputValue}/> 
                     </>
             )
         }
